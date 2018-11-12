@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1542017548 source:d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\actions.c
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+
+1542017598 source:d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+
+1542017479 source:d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1542018478 d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\donnees.h
+
+1542018610 source:d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\donnees.c
+	<stdio.h>
+	<stdlib.h>
+
+1542010932 d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\menu.h
+
+1542010932 d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\actions.h
+

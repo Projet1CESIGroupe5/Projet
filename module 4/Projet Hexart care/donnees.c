@@ -1,23 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "donnees.h"
 
-
-void lecture()
+Valeurs* stocker(int *size, Valeurs *vlist)
 {
-            FILE* fichier = NULL;
-            char caractereActuel;
-            fichier = fopen("battements.csv","r");
+    int i;
+    FILE* fichier = NULL;
+    fichier = fopen("battements.csv","r");
+    if (fichier != NULL)
+    {
+        int temps, poul;
+        printf("Temps\tPoul\n");
+        while(fscanf(fichier, "%i ; %i",&temps, &poul)!=EOF)
+        {
+            Valeurs v;
+            v.poul = poul;
+            v.temps = temps;
+            vlist[*size] = v;
+            (*size)++;
 
-            if (fichier != NULL)
-            {
-                do
-                {
-                    caractereActuel = fgetc(fichier);
-                    printf("%c", caractereActuel);
-                }while(caractereActuel != EOF);
+        }
+        fclose(fichier);
+    }
+    return vlist;
 
-                    fclose(fichier);
-            }
-                return 0;
 }
+
 

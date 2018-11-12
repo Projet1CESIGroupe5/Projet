@@ -24,3 +24,31 @@
 
 1542010932 d:\documents\ue-fondamentaux scientifique\projet\projet hexart care\actions.h
 
+1542042830 source:d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\donnees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"donnees.h"
+
+1542038158 source:d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1542043735 d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\menu.h
+
+1542038121 source:d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+
+1542043735 d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\donnees.h
+
+1542042830 source:d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\actions.c
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+	"actions.h"
+
+1542042757 d:\documents\ue-fondamentaux scientifique\projet\projet\module 4\projet hexart care\actions.h
+

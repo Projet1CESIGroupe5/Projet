@@ -22,6 +22,9 @@ while(l==0)
         printf("0)Quitter\n");
         scanf("%i",&c);
 
+        Valeurs vlist[100];
+        int size = 0;
+
         if (c==1)
 		{
              afficher_ordre();
@@ -34,11 +37,13 @@ while(l==0)
             scanf("%i",&c);
             if (c==1)
             {
-                tri_croissant_temps();
+                tri_croissant_temps(vlist, &size);
+                afficher(vlist, size);
             }
             else if(c==2)
             {
-                tri_croissant_pouls();
+                tri_croissant_pouls(vlist, &size);
+                afficher(vlist, size);
             }
 		}
 		else if(c==3)
@@ -48,16 +53,21 @@ while(l==0)
             scanf("%i",&c);
             if (c==1)
             {
-                tri_decroissant_temps();
+                tri_decroissant_temps(vlist, &size);
+                afficher(vlist, size);
             }
             else if(c==2)
             {
-                tri_decroissant_pouls();
+                tri_decroissant_pouls(vlist, &size);
+                afficher(vlist, size);
             }
 		}
 		else if(c==4)
 		{
-
+            int temps;
+            tri_croissant_temps(vlist, &size);
+            int index = recherche_dicho(vlist, size, temps);
+            printf("temps = %i, poul = %i\n", vlist[index].temps, vlist[index].pouls);
 		}
 		else if(c==5)
 		{

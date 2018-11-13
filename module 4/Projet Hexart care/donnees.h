@@ -8,5 +8,6 @@ struct Valeurs
     int temps;
 };
 
-Valeurs* stocker(int *size, Valeurs* vlist);
+void stocker(int *size, Valeurs* vlist);
+
 #endif // DONNEES_H_INCLUDED

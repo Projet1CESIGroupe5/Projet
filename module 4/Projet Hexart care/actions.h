@@ -1,6 +1,7 @@
 #ifndef ACTIONS_H_INCLUDED
 #define ACTIONS_H_INCLUDED
 
-void tri_croissant(Valeurs tab[], int taille);
+void afficher_ordre();
+void tri_croissant();
 
 #endif // ACTIONS_H_INCLUDED

@@ -14,17 +14,17 @@ void afficher_ordre()
         printf("%i\t%i\n", vlist[k].temps, vlist[k].poul);
     }
 }
-void tri_croissant(Valeurs tab[], int taille)
+void tri_croissant()
 {
     int i,j;
     Valeurs vlist[100];
     stocker(&i, vlist);
-    for (i=1;i<taille;i++)
+    for (int k=1;k<i;k++)
     {
-        Valeurs elem=tab[i];
-        for(j=i;j>0 && tab[j-1].temps>elem.temps;j--)
-            tab[j]=tab[j-1];
-        tab[j]=elem;
+        Valeurs elem=vlist[k];
+        for(j=i;j>0 && vlist[j-1].temps>elem.temps;j--)
+            vlist[j]=vlist[j-1];
+        vlist[j]=elem;
     }
 
 }

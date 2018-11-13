@@ -33,7 +33,7 @@ while(l==0)
             scanf("%i",&c);
             if (c==1)
             {
-                tri_croissant(vlist)
+                tri_croissant();
             }
             else if(c==2)
             {

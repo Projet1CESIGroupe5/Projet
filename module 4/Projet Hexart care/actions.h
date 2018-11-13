@@ -7,9 +7,10 @@ void tri_decroissant_temps(Valeurs *vlist, int *size);
 void tri_croissant_pouls(Valeurs *vlist, int *size);
 void tri_decroissant_pouls(Valeurs *vlist, int *size);
 void nb_valeurs();
-void valeurs_mini(Valeurs *vlist);
 void afficher(Valeurs* vlist, int size);
 void valeurs_min_max();
+void instant_t();
+void moyenne();
 int recherche_dicho(Valeurs* tab, int size, int val);
 
 #endif // ACTIONS_H_INCLUDED

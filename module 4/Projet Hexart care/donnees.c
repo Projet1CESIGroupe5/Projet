@@ -7,7 +7,7 @@ void stocker(int *size, Valeurs *vlist)
 {
     int i;
     FILE* fichier = NULL;
-    fichier = fopen("battements.csv","r");
+    fichier = fopen("nonTrie.csv","r");
     if (fichier != NULL)
     {
         int temps, pouls;

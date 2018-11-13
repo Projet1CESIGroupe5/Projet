@@ -11,18 +11,24 @@ void menu()
 {
 while(l==0)
 	{
-        printf("Veuillez choisir l'action a effectuer :\n");
-        printf("1)Afficher les donnees dans l'ordre du fichier\n");
-        printf("2)Afficher les donnees dans l ordre croissant\n");
-        printf("3)Afficher les donnees dans l ordre decroisant\n");
-        printf("4)Afficher les donnees pour un temps particulier\n");
-        printf("5)Afficher le moyenne de pouls pour une plage de temps\n");
-        printf("6)Afficher le nombre de ligne en memoire\n");
-        printf("7)Afficher le max et min de pouls\n");
-        printf("0)Quitter\n");
+	    printf("                                   .=====================.\n");
+	    printf("                                   |CARDIO FREQUENCEMETRE|\n");
+	    printf("                                   '====================='\n");
+	    printf("            .=====================================================================.\n");
+        printf("            |\tVeuillez choisir l'action a effectuer :                           |\n");
+        printf("            |\t\t1)Afficher les donnees dans l'ordre du fichier            |\n");
+        printf("            |\t\t2)Afficher les donnees dans l ordre croissant             |\n");
+        printf("            |\t\t3)Afficher les donnees dans l ordre decroisant            |\n");
+        printf("            |\t\t4)Afficher les donnees pour un temps particulier          |\n");
+        printf("            |\t\t5)Afficher le moyenne de pouls pour une plage de temps    |\n");
+        printf("            |\t\t6)Afficher le nombre de ligne en memoire                  |\n");
+        printf("            |\t\t7)Afficher le max et min de pouls                         |\n");
+        printf("            |\t\t0)Quitter                                                 |\n");
+	    printf("            '====================================================================='\n");
+
         scanf("%i",&c);
 
-        Valeurs vlist[100];
+        Valeurs vlist[20000];
         int size = 0;
 
         if (c==1)
@@ -64,22 +70,19 @@ while(l==0)
 		}
 		else if(c==4)
 		{
-            int temps;
-            tri_croissant_temps(vlist, &size);
-            int index = recherche_dicho(vlist, size, temps);
-            printf("temps = %i, poul = %i\n", vlist[index].temps, vlist[index].pouls);
+            instant_t(vlist, &size);
 		}
 		else if(c==5)
 		{
-
+            moyenne(vlist, &size);
 		}
 		else if(c==6)
 		{
-			nb_valeurs();
+			nb_valeurs(vlist, &size);
 		}
 		else if(c==7)
 		{
-            valeurs_min_max();
+            valeurs_min_max(vlist, &size);
 		}
 			printf("Voulez-vous refaire une action ?\n1)Oui\n0)Non\n");
 			scanf("%i",&c);

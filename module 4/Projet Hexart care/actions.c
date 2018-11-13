@@ -7,7 +7,7 @@
 void afficher_ordre()
 {
     int i = 0;
-    Valeurs vlist[100];
+    Valeurs vlist[10000];
     stocker(&i, vlist);
     afficher(vlist, i);
 }
@@ -77,88 +77,66 @@ void afficher(Valeurs* vlist, int size)
     }
 }
 
-void nb_valeurs()
+void nb_valeurs(Valeurs *vlist, int *size)
 {
-    Valeurs vlist[100];
-    int size = 0;
-    stocker(&size, vlist);
-    printf("Nombre de valeurs = %i\n",size);
+    stocker(size, vlist);
+    printf("Nombre de valeurs = %i\n",*size);
 
 }
-void instant_t()
+void instant_t(Valeurs *vlist, int *size)
 {
-    Valeurs vlist[100];
-    int size = 0;
-    stocker(&size, vlist);
-    int i, j;
-    for(i = 1; i < size; i++)
-    {
-        Valeurs var = vlist[i];
-        for(j = i; j > 0 && vlist[j-1].temps > var.temps; j--)
-        {
-            vlist[j] = vlist[j-1];
-        }
-        vlist[j] = var;
-    }
-
+    stocker(size, vlist);
+    int temps;
+    printf("Pour quelle insant t voulez-vous le pouls?\n");
+    scanf("%i",&temps);
+    tri_croissant_temps(vlist, size);
+    int index = recherche_dicho(vlist, *size, temps);
+    printf("A l'instant t=%i, le pouls est de %i\n", vlist[index].temps, vlist[index].pouls);
 
 }
-void valeurs_min_max()
+void valeurs_min_max(Valeurs *vlist, int *size)
 {
-    Valeurs vlist[100];
-    int size = 0;
-    stocker(&size, vlist);
-    int i, j;
-    for(i = 1; i < size; i++)
-    {
-        Valeurs var = vlist[i];
-        for(j = i; j > 0 && vlist[j-1].pouls > var.pouls; j--)
-        {
-            vlist[j] = vlist[j-1];
-        }
-        vlist[j] = var;
-    }
+    stocker(size, vlist);
+
+    tri_croissant_pouls(vlist, size);
     printf("Le pouls minimum est :\n");
     printf("%i\t\n", vlist[0].pouls);
 
-    for(i = 1; i < size; i++)
-    {
-        Valeurs var = vlist[i];
-        for(j = i; j > 0 && vlist[j-1].pouls < var.pouls; j--)
-        {
-            vlist[j] = vlist[j-1];
-        }
-        vlist[j] = var;
-    }
+    tri_decroissant_pouls(vlist, size);
     printf("Le pouls maximum est :\n");
     printf("%i\t\n", vlist[0].pouls);
-
 }
 
 int recherche_dicho(Valeurs *tab, int size, int val)
 {
-      bool trouve;  //vaut faux tant que la valeur "val" n'aura pas été trouvée
-  int id;  //indice de début
-  int ifin;  //indice de fin
-  int im;  //indice de "milieu"
-  
+  bool trouve;
+  int id;
+  int ifin;
+  int im;
+
   /* initialisation de ces variables avant la boucle de recherche */
-  trouve = false;  //la valeur n'a pas encore été trouvée
-  id = 0;  //intervalle de recherche compris entre 0...
-  ifin = size;  //...et nbVal
-  
+  trouve = false;
+  id = 0;
+  ifin = size;
+
   /* boucle de recherche */
   while(!trouve && ((ifin - id) > 1)){
 
-    im = (id + ifin)/2;  //on détermine l'indice de milieu
-    
-    trouve = (tab[im].temps == val);  //on regarde si la valeur recherchée est à cet indice
-    
-    if(tab[im].temps > val) ifin = im;  //si la valeur qui est à la case "im" est supérieure à la valeur recherchée, l'indice de fin "ifin" << devient >> l'indice de milieu, ainsi l'intervalle de recherche est restreint lors du prochain tour de boucle
-    else id = im;  //sinon l'indice de début << devient >> l'indice de milieu et l'intervalle est de la même façon restreint
+    im = (id + ifin)/2;
+
+    trouve = (tab[im].temps == val);
+
+    if(tab[im].temps > val) ifin = im;
+    else id = im;
   }
-  
+
   /* test conditionnant la valeur que la fonction va renvoyer */
-  if(tab[id].temps == val) return(id);  //si on a trouvé la bonne valeur, on retourne l'indice
-  else return(-1);  //sinon on retourne -1
+  if(tab[id].temps == val) return(id);
+  else return(-1);
+}
+void moyenne(Valeurs *vlist, int *size)
+{
+    instant_t(vlist, size);
+    instant_t(vlist, size);
+
 }

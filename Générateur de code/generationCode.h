@@ -1,0 +1,7 @@
+#ifndef GENERATIONCODE_H_INCLUDED
+#define GENERATIONCODE_H_INCLUDED
+
+void mode_de_leds(int choix);
+
+
+#endif // GENERATIONCODE_H_INCLUDED

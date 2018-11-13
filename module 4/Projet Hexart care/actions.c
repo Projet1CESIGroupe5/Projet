@@ -8,23 +8,48 @@ void afficher_ordre()
     int i = 0;
     Valeurs vlist[100];
     stocker(&i, vlist);
-    int k;
-        for (k=0;k<i;k++)
-    {
-        printf("%i\t%i\n", vlist[k].temps, vlist[k].poul);
-    }
+    afficher(vlist, i);
 }
-void tri_croissant()
+void tri_croissant_temps()
 {
-    int i,j;
     Valeurs vlist[100];
-    stocker(&i, vlist);
-    for (int k=1;k<i;k++)
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
     {
-        Valeurs elem=vlist[k];
-        for(j=i;j>0 && vlist[j-1].temps>elem.temps;j--)
-            vlist[j]=vlist[j-1];
-        vlist[j]=elem;
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].temps > var.temps; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
     }
+    afficher(vlist, size);
+}
 
+void tri_decroissant_temps()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].temps < var.temps; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+    afficher(vlist, size);
+}
+
+void afficher(Valeurs* vlist, int size)
+{
+    for(int i = 0; i < size; i++)
+    {
+        printf("%i\t%i\n", vlist[i].temps, vlist[i].poul);
+    }
 }

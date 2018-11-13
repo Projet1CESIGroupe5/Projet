@@ -33,7 +33,7 @@ while(l==0)
             scanf("%i",&c);
             if (c==1)
             {
-                tri_croissant();
+                tri_croissant_temps();
             }
             else if(c==2)
             {
@@ -47,7 +47,7 @@ while(l==0)
             scanf("%i",&c);
             if (c==1)
             {
-
+                tri_decroissant_temps();
             }
             else if(c==2)
             {

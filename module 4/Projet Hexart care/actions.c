@@ -27,7 +27,24 @@ void tri_croissant_temps()
     }
     afficher(vlist, size);
 }
+void tri_croissant_pouls()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].pouls > var.pouls; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+    afficher(vlist, size);
 
+}
 void tri_decroissant_temps()
 {
     Valeurs vlist[100];
@@ -45,11 +62,86 @@ void tri_decroissant_temps()
     }
     afficher(vlist, size);
 }
-
+void tri_decroissant_pouls()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].pouls < var.pouls; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+    afficher(vlist, size);
+}
 void afficher(Valeurs* vlist, int size)
 {
+    printf("Temps\tPouls\n");
     for(int i = 0; i < size; i++)
     {
-        printf("%i\t%i\n", vlist[i].temps, vlist[i].poul);
+        printf("%i\t%i\n", vlist[i].temps, vlist[i].pouls);
     }
+}
+
+void nb_valeurs()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    printf("Nombre de valeurs = %i\n",size);
+
+}
+void instant_t()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].temps > var.temps; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+
+
+}
+void valeurs_min_max()
+{
+    Valeurs vlist[100];
+    int size = 0;
+    stocker(&size, vlist);
+    int i, j;
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].pouls > var.pouls; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+    printf("Le pouls minimum est :\n");
+    printf("%i\t\n", vlist[0].pouls);
+
+    for(i = 1; i < size; i++)
+    {
+        Valeurs var = vlist[i];
+        for(j = i; j > 0 && vlist[j-1].pouls < var.pouls; j--)
+        {
+            vlist[j] = vlist[j-1];
+        }
+        vlist[j] = var;
+    }
+    printf("Le pouls maximum est :\n");
+    printf("%i\t\n", vlist[0].pouls);
+
 }

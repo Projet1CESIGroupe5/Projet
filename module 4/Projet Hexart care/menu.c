@@ -12,12 +12,13 @@ void menu()
 while(l==0)
 	{
         printf("Veuillez choisir l'action a effectuer :\n");
-        printf("1)Afficher les donnees dans l'ordre\n");
+        printf("1)Afficher les donnees dans l'ordre du fichier\n");
         printf("2)Afficher les donnees dans l ordre croissant\n");
         printf("3)Afficher les donnees dans l ordre decroisant\n");
-        printf("6)Afficher les donnees pour un temps particulier\n7)Afficher le moyenne de pouls pour une plage de temps\n");
-        printf("8)Afficher le nombre de ligne en memoire\n");
-        printf("9)Afficher le max et min de pouls\n");
+        printf("4)Afficher les donnees pour un temps particulier\n");
+        printf("5)Afficher le moyenne de pouls pour une plage de temps\n");
+        printf("6)Afficher le nombre de ligne en memoire\n");
+        printf("7)Afficher le max et min de pouls\n");
         printf("0)Quitter\n");
         scanf("%i",&c);
 
@@ -37,7 +38,7 @@ while(l==0)
             }
             else if(c==2)
             {
-
+                tri_croissant_pouls();
             }
 		}
 		else if(c==3)
@@ -51,7 +52,7 @@ while(l==0)
             }
             else if(c==2)
             {
-
+                tri_decroissant_pouls();
             }
 		}
 		else if(c==4)
@@ -60,14 +61,15 @@ while(l==0)
 		}
 		else if(c==5)
 		{
+
 		}
 		else if(c==6)
 		{
-			printf("nb de ligne\n");
+			nb_valeurs();
 		}
 		else if(c==7)
 		{
-			printf("max et min\n");
+            valeurs_min_max();
 		}
 			printf("Voulez-vous refaire une action ?\n1)Oui\n0)Non\n");
 			scanf("%i",&c);

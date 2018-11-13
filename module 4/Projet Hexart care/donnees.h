@@ -4,7 +4,7 @@
 typedef struct Valeurs Valeurs;
 struct Valeurs
 {
-    int poul;
+    int pouls;
     int temps;
 };
 

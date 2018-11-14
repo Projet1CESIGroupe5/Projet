@@ -10,7 +10,7 @@ void nb_valeurs();
 void afficher(Valeurs* vlist, int size);
 void valeurs_min_max();
 void instant_t();
-void moyenne();
+int moyenne();
 int recherche_dicho(Valeurs* tab, int size, int val);
 
 #endif // ACTIONS_H_INCLUDED

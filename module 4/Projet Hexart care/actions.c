@@ -70,28 +70,91 @@ void tri_decroissant_pouls(Valeurs *vlist, int *size)
 }
 void afficher(Valeurs* vlist, int size)
 {
-    printf("Temps\tPouls\n");
+    printf("                                             .----------------.\n");
+    printf("                                             |Temps\tPouls |\n");
     for(int i = 0; i < size; i++)
     {
-        printf("%i\t%i\n", vlist[i].temps, vlist[i].pouls);
+        printf("                                             | %i\t%i    |\n", vlist[i].temps, vlist[i].pouls);
     }
+    printf("                                             '----------------'\n");
 }
 
 void nb_valeurs(Valeurs *vlist, int *size)
 {
     stocker(size, vlist);
-    printf("Nombre de valeurs = %i\n",*size);
+    printf("                                 .-----------------------------.\n");
+    printf("                                 |   Nombre de valeurs = %i |\n",*size);
+    printf("                                 '-----------------------------'\n");
 
 }
 void instant_t(Valeurs *vlist, int *size)
 {
     stocker(size, vlist);
     int temps;
-    printf("Pour quelle insant t voulez-vous le pouls?\n");
+    printf("                      .-----------------------------------------------.\n");
+    printf("                      |   Pour quel instant t voulez-vous le pouls ? |\n");
+    printf("                      '-----------------------------------------------'\n");
     scanf("%i",&temps);
     tri_croissant_temps(vlist, size);
     int index = recherche_dicho(vlist, *size, temps);
-    printf("A l'instant t=%i, le pouls est de %i\n", vlist[index].temps, vlist[index].pouls);
+    int a = vlist[index].pouls;
+    int b = vlist[index].temps;
+    if (a<100)
+    {
+        if(b<10)
+        {
+            printf("                      .----------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '----------------------------------------'\n");
+        }
+        else if(b<100)
+        {
+            printf("                      .-----------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '-----------------------------------------'\n");
+        }
+        else if(b<1000)
+        {
+            printf("                      .------------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '------------------------------------------'\n");
+        }
+        else if(b<=10000)
+        {
+            printf("                      .--------------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i   |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '--------------------------------------------'\n");
+        }
+    }
+
+    else
+    {
+        if(b<10)
+        {
+            printf("                      .-----------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '-----------------------------------------'\n");
+        }
+        else if(b<100)
+        {
+            printf("                      .------------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '------------------------------------------'\n");
+        }
+        else if(b<1000)
+        {
+            printf("                      .-------------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '-------------------------------------------'\n");
+        }
+        else if(b<=10000)
+        {
+            printf("                      .--------------------------------------------.\n");
+            printf("                      |   A l'instant t=%i, le pouls est de %i  |\n", vlist[index].temps, vlist[index].pouls);
+            printf("                      '--------------------------------------------'\n");
+        }
+    }
+
 
 }
 void valeurs_min_max(Valeurs *vlist, int *size)
@@ -99,12 +162,12 @@ void valeurs_min_max(Valeurs *vlist, int *size)
     stocker(size, vlist);
 
     tri_croissant_pouls(vlist, size);
-    printf("Le pouls minimum est :\n");
-    printf("%i\t\n", vlist[0].pouls);
+    printf("                                  .---------------------------.\n");
+    printf("                                  |Le pouls minimum est : %i  |\n", vlist[0].pouls);
 
     tri_decroissant_pouls(vlist, size);
-    printf("Le pouls maximum est :\n");
-    printf("%i\t\n", vlist[0].pouls);
+    printf("                                  |Le pouls maximum est : %i |\n", vlist[0].pouls);
+    printf("                                  '---------------------------'\n");
 }
 
 int recherche_dicho(Valeurs *tab, int size, int val)
@@ -134,9 +197,34 @@ int recherche_dicho(Valeurs *tab, int size, int val)
   if(tab[id].temps == val) return(id);
   else return(-1);
 }
-void moyenne(Valeurs *vlist, int *size)
+int moyenne()
 {
-    instant_t(vlist, size);
-    instant_t(vlist, size);
+    Valeurs vlist[20000];
+    int size = 0;
+    int t1, t2;
+    printf("                        .----------------------------------------------.\n");
+    printf("                        |   Indiquer le debut de la plage de donnees   |\n");
+    printf("                        '----------------------------------------------'\n");
+    scanf("%i", &t1);
+    printf("                        .----------------------------------------------.\n");
+    printf("                        |   Indiquer la fin de la plage de donnees     |\n");
+    printf("                        '----------------------------------------------'\n");
+    scanf("%i", &t2);
 
+    tri_croissant_temps(vlist, &size);
+
+    int index1 = recherche_dicho(vlist, size, t1);
+    int index2 = recherche_dicho(vlist, size, t2);
+
+    int pouls = 0;
+    for(int i = index1; i <= index2; i++)
+    {
+        //printf("A l'instant t=%i, le pouls est de %i\n", vlist[i].temps, vlist[i].pouls);
+        pouls += vlist[i].pouls;
+    }
+    int moy = pouls/(index2-index1+1);
+    printf("                        .---------------------------------------------------.\n");
+    printf("                        |   Pour une plage de donnees allant de %i a %i \n",t1,t2);
+    printf("                        |   La moyenne des pouls est de : %i                |\n",moy);
+    printf("                        '---------------------------------------------------'\n");
 }

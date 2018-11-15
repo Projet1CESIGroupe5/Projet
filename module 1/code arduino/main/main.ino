@@ -1,4 +1,4 @@
-#include "cardio.h"
+#include "cardio.c"
 
 void setup()
 {
@@ -10,9 +10,7 @@ void loop()
   int val = analogRead(0);
 
   float tension = val * (5.0/1023.0);
-
-  heartbeat_detection(tension);
-
-  Serial.println(moy);
+  
+  heartbeat(tension);
   
 }

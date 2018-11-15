@@ -1,41 +1,34 @@
 #include "cardio.h"
+#include <Arduino.h>
 
-int max = 0;
-long lastTime = 0;
-int montant = 0;
-int battement = 0;
-int battements = 0;
-float bpms = 0;
-int moy = 0;
-
-void heartbeat_detection(float tension) {
-if(tension > 1 && battement == 0)
-  {
-    if(lastTime == 0)
-    {
-      lastTime = millis();
-    }
-    else
-    {
-      long DiffTemps = millis()-lastTime;
-      float bpm = 60.0*(DiffTemps/1000.0)*2.0;
-      if(bpm > 60 && bpm < 200)
+void heartbeat(float tension) {
+  //float tension = 1.0;
+    if(tension > 1 && montant == 0)
       {
-        bpms += bpm;
-        battements += 1;
-        moy = bpm;
+        if(lastTime == 0)
+        {
+          lastTime = millis();
+        }
+        else
+        {
+          long DiffTemps = millis()-lastTime;
+          float bpm = 60.0*(DiffTemps/1000.0)*2.0;
+          if(bpm > 60 && bpm < 200)
+          {
+            bpms += bpm;
+            bts += 1;
+          }
+        }
+        lastTime = millis();
+        montant = 1;
       }
-    }
-    lastTime = millis();
-    battement = 1;
-  }
-  if(tension < 1)
-  {
-    battement = 0;
-  }
-  if(battements == 5)
-  {
-    bpms = 0.0;
-    battements = 0;
-  }
+      if(tension < 1)
+      {
+        montant = 0;
+      }
+      if(bts == 5)
+      {
+        bpms = 0.0;
+        bts = 0;
+      }
 }

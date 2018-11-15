@@ -1,7 +1,7 @@
 #ifndef ACTIONS_H_INCLUDED
 #define ACTIONS_H_INCLUDED
 
-void afficher_ordre();
+void afficher_ordre(Valeurs *vlist, int *size);
 void tri_croissant_temps(Valeurs *vlist, int *size);
 void tri_decroissant_temps(Valeurs *vlist, int *size);
 void tri_croissant_pouls(Valeurs *vlist, int *size);

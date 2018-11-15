@@ -21,7 +21,6 @@ void stocker(int *size, Valeurs *vlist)
         }
         fclose(fichier);
     }
-
 }
 
 

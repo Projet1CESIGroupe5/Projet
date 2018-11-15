@@ -11,23 +11,36 @@ void menu()
 {
 while(l==0)
 	{
+	    system("color 8e");
+	    //system("color 0c");
+	    //system("color f0");
+	    system("color ");
+	    system("cls");
 	    printf("                                                    .---------------------.\n");
 	    printf("                                                    |CARDIO FREQUENCEMETRE|\n");
 	    printf("                                                    '---------------------'\n");
 	    printf("                            .---------------------------------------------------------------------.\n");
-        printf("                            |\tVeuillez choisir l'action a effectuer :                           |\n");
+        printf("                            |   Veuillez choisir l'action a effectuer :                           |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t1)Afficher les donnees dans l'ordre du fichier            |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t2)Trier le fichier                                        |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t3)Afficher les donnees pour un temps particulier          |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t4)Calculer le moyenne de pouls pour une plage de temps    |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t5)Calculer la moyenne du pouls de tout le fichier         |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t6)Afficher le nombre de ligne en memoire                  |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t7)Afficher le max et min de pouls                         |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t8)Enregistrer un tri dans un fichier                      |\n");
+        printf("                            |                                                                     |\n");
         printf("                            |\t\t0)Quitter                                                 |\n");
 	    printf("                            '---------------------------------------------------------------------'\n\n");
-        printf("'----------------------------------------------------------------------------------------------------------------------'");
-
+        printf(".----------------------------------------------------------------------------------------------------------------------.");
         scanf("%i",&c);
 
         Valeurs vlist[20000];
@@ -35,7 +48,7 @@ while(l==0)
 
         if (c==1)
 		{
-             afficher_ordre();
+             afficher_ordre(vlist, &size);
 
 		}
 		else if(c==2)
@@ -112,7 +125,6 @@ while(l==0)
 		}
 		else if(c==8)
         {
-        {
             printf("                                            .---------------------------------------.\n");
             printf("                                            |   Quel tri voulez-vous enregistrer :  |\n");
             printf("                                            |   1)Tri Croissant                     |\n");
@@ -162,10 +174,8 @@ while(l==0)
                 }
             }
         }
-
-        }
             printf("\n");
-            printf("'----------------------------------------------------------------------------------------------------------------------'\n");
+            printf(".----------------------------------------------------------------------------------------------------------------------.\n");
             printf("                                            .------------------------------------.\n");
 			printf("                                            |   Voulez-vous refaire une action ? |\n");
 			printf("                                            |   1)Oui                            |\n");

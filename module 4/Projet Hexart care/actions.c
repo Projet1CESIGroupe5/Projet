@@ -4,10 +4,9 @@
 #include "donnees.h"
 #include "actions.h"
 
-void afficher_ordre()
+void afficher_ordre(Valeurs *vlist, int *siz)
 {
     int i = 0;
-    Valeurs vlist[20000];
     stocker(&i, vlist);
     afficher(vlist, i);
 }
@@ -38,7 +37,6 @@ void tri_croissant_pouls(Valeurs *vlist, int *size)
         }
         vlist[j] = var;
     }
-
 }
 void tri_decroissant_temps(Valeurs *vlist, int *size)
 {
@@ -81,10 +79,7 @@ void afficher(Valeurs* vlist, int size)
     printf("                                |%i \t%i    |%i \t%i    |%i\t%i    |%i\t%i    |\n",vlist[i].temps,vlist[i].pouls,vlist[j].temps,vlist[j].pouls,vlist[k].temps,vlist[k].pouls,vlist[l].temps,vlist[l].pouls);
     //printf("                                             | %i\t%i    |\n", vlist[i].temps, vlist[i].pouls);
     //}
-    i++;
-    j++;
-    k++;
-    l++;
+    i++,j++,k++,l++;
     }
     printf("                                '-------------------------------------------------------------'\n");
 }
@@ -95,7 +90,6 @@ void nb_valeurs(Valeurs *vlist, int *size)
     printf("                                               .-----------------------------.\n");
     printf("                                               |   Nombre de valeurs = %i |\n",*size);
     printf("                                               '-----------------------------'\n");
-
 }
 void instant_t(Valeurs *vlist, int *size)
 {
@@ -107,6 +101,14 @@ void instant_t(Valeurs *vlist, int *size)
     scanf("%i",&temps);
     tri_croissant_temps(vlist, size);
     int index = recherche_dicho(vlist, *size, temps);
+    if (index == -1)
+    {
+        printf("                                    .----------------------------------------------------.\n");
+        printf("                                    |   La valeurs recherche n'est pas dans le fichier   |\n");
+        printf("                                    '----------------------------------------------------'\n");
+    }
+    else
+    {
     int a = vlist[index].pouls;
     int b = vlist[index].temps;
     if (a<100)
@@ -164,8 +166,7 @@ void instant_t(Valeurs *vlist, int *size)
             printf("                                       '--------------------------------------------'\n");
         }
     }
-
-
+}
 }
 void valeurs_min_max(Valeurs *vlist, int *size)
 {
@@ -179,7 +180,6 @@ void valeurs_min_max(Valeurs *vlist, int *size)
     printf("                                               |Le pouls maximum est : %i |\n", vlist[0].pouls);
     printf("                                               '---------------------------'\n");
 }
-
 int recherche_dicho(Valeurs *tab, int size, int val)
 {
   bool trouve;
@@ -193,19 +193,18 @@ int recherche_dicho(Valeurs *tab, int size, int val)
   ifin = size;
 
   /* boucle de recherche */
-  while(!trouve && ((ifin - id) > 1)){
-
+  while(!trouve && ((ifin - id) > 1))
+    {
     im = (id + ifin)/2;
 
     trouve = (tab[im].temps == val);
 
     if(tab[im].temps > val) ifin = im;
     else id = im;
-  }
-
+    }
   /* test conditionnant la valeur que la fonction va renvoyer */
   if(tab[id].temps == val) return(id);
-  else return(-1);
+  else return -1;
 }
 int moyenne_plage()
 {
@@ -226,6 +225,32 @@ int moyenne_plage()
     int index1 = recherche_dicho(vlist, size, t1);
     int index2 = recherche_dicho(vlist, size, t2);
 
+    if (index1 == -1 && index2 == -1)
+    {
+        printf("                                              .---------------------------------.\n");
+        printf("                                              |   Les valeurs sont invalides    |\n");
+        printf("                                              '---------------------------------'\n");
+    }
+    else if (index1 == -1)
+    {
+        printf("                                      .--------------------------------------------------.\n");
+        printf("                                      |   La premiere valeur n'est pas dans le fichier   |\n");
+        printf("                                      '--------------------------------------------------'\n");
+    }
+    else if (index2 == -1)
+    {
+        printf("                                      .--------------------------------------------------.\n");
+        printf("                                      |   La deuxieme valeur n'est pas dans le fichier   |\n");
+        printf("                                      '--------------------------------------------------'\n");
+    }
+    else if (t2<=t1)
+    {
+        printf("                                                .-------------------------------.\n");
+        printf("                                                |   Plage de donnees invalide   |\n");
+        printf("                                                '-------------------------------'\n");
+    }
+    else
+    {
     int pouls = 0;
     for(int i = index1; i <= index2; i++)
     {
@@ -236,9 +261,9 @@ int moyenne_plage()
     printf("                                        |   Pour une plage de donnees allant de %i a %i \n",t1,t2);
     printf("                                        |   La moyenne des pouls est de : %i                |\n",moy);
     printf("                                        '---------------------------------------------------'\n");
+    }
+    }
 
-
-}
 void moyenne_generale()
 {
     Valeurs vlist[20000];

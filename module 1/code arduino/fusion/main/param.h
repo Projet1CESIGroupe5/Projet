@@ -1,5 +1,4 @@
-//declaration of an integer MODE variable
-int MODE = 7;
+#include <Arduino.h>
 //start of the function
 void function()
  {

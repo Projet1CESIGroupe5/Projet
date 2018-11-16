@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "donnees.h"
 #include "actions.h"
+#include "menuLed.h"
 
 //Declaration of the variables
     int c=0;//declaration of the choice variables
@@ -115,7 +116,7 @@ while(l==0)//while the condition of the "while" is true we do the action again
 		}
 		case 5 ://test value 5
         {
-            average_general();//Call "average_general"
+            average_file();//Call "average_file"
             break;//quit the conditional structure
         }
 		case 6 ://test value 6

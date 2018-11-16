@@ -12,7 +12,7 @@ void display(Value *vlist, int size);
 void value_min_max(Value *vlist, int *size);
 void instant_t(Value *vlist, int *size);
 int average_range();
-void average_general();
+void average_file();
 int researche_dicho(Value* tab, int size, int val);
 void file_increasing_time(Value *vlist, int *size);
 void file_decreasing_time(Value *vlist, int *size);

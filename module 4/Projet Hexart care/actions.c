@@ -261,7 +261,7 @@ int average_range()//This function calculate an average of a range of time asked
     }
 }
 
-void average_general()//This function calculate the average of all the file
+void average_file()//This function calculate the average of all the file
 {
     Value vlist[20000];
     int size = 0;

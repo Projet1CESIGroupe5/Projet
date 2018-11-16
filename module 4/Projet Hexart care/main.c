@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "menu.h"
 
-int main()
+int main()//Declaration of the function "main"
 {
-    menu();
+    menu();//Call the function "menu"
 }
 
 

@@ -1,13 +1,13 @@
 #ifndef DONNEES_H_INCLUDED
 #define DONNEES_H_INCLUDED
-
-typedef struct Valeurs Valeurs;
-struct Valeurs
+//This file contain the prototype of the structure
+typedef struct Value Value;
+struct Value
 {
-    int pouls;
-    int temps;
+    int puls;
+    int time;
 };
 
-void stocker(int *size, Valeurs* vlist);
+void stock(int *size, Value* vlist);//Prototype of the function "stock"
 
 #endif // DONNEES_H_INCLUDED

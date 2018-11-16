@@ -1,21 +1,22 @@
 #ifndef ACTIONS_H_INCLUDED
 #define ACTIONS_H_INCLUDED
 
-void afficher_ordre(Valeurs *vlist, int *size);
-void tri_croissant_temps(Valeurs *vlist, int *size);
-void tri_decroissant_temps(Valeurs *vlist, int *size);
-void tri_croissant_pouls(Valeurs *vlist, int *size);
-void tri_decroissant_pouls(Valeurs *vlist, int *size);
-void nb_valeurs();
-void afficher(Valeurs* vlist, int size);
-void valeurs_min_max();
-void instant_t();
-int moyenne_plage();
-void moyenne_generale();
-int recherche_dicho(Valeurs* tab, int size, int val);
-void fichier_croissant_temps(Valeurs *vlist, int *size);
-void fichier_decroissant_temps(Valeurs *vlist, int *size);
-void fichier_croissant_pouls(Valeurs *vlist, int *size);
-void fichier_decroissant_pouls(Valeurs *vlist, int *size);
+//This file contains all the prototypes of the functions as well as their prototypes
+void order_display(Value *vlist, int *size);
+void sort_increasing_time(Value *vlist, int *size);
+void sort_decreasing_time(Value *vlist, int *size);
+void sort_increasing_puls(Value *vlist, int *size);
+void sort_decreasing_puls(Value *vlist, int *size);
+void nb_value(Value *vlist, int *size);
+void display(Value *vlist, int size);
+void value_min_max(Value *vlist, int *size);
+void instant_t(Value *vlist, int *size);
+int average_range();
+void average_general();
+int researche_dicho(Value* tab, int size, int val);
+void file_increasing_time(Value *vlist, int *size);
+void file_decreasing_time(Value *vlist, int *size);
+void file_increasing_puls(Value *vlist, int *size);
+void file_decreasing_puls(Value *vlist, int *size);
 
 #endif // ACTIONS_H_INCLUDED

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "donnees.h"
 #include "actions.h"
-
+#include "menuLed.h"
 
 //Declaration of the variables
     int c=0;//declaration of the choice variables
@@ -38,6 +38,8 @@ while(l==0)//while the condition of the "while" is true we do the action again
         printf("                            |\t\t7)Afficher le max et min de pouls                         |\n");
         printf("                            |                                                                     |\n");
         printf("                            |\t\t8)Enregistrer un tri dans un fichier                      |\n");
+        printf("                            |                                                                     |\n");
+        printf("                            |\t\t9)Choisir le mode d'allumage des LEDS                     |\n");
         printf("                            |                                                                     |\n");
         printf("                            |\t\t0)Quitter                                                 |\n");
 	    printf("                            '---------------------------------------------------------------------'\n\n");
@@ -178,6 +180,11 @@ while(l==0)//while the condition of the "while" is true we do the action again
                 }//The "printf" confirm to the user that he has saved the file properly
             }//The real difference with the second "if" is that the data is saved and not displayed
             break;//quit the conditional structure
+        }
+        case 9 ://test value 9
+        {
+              display_menu();//call the function "display_menu"
+              break;//quit the conditional structure
         }
         default :
             printf("                                             .-----------------------------------.\n");

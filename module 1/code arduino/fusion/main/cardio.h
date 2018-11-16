@@ -11,6 +11,6 @@ int amount_bpm;
 int bpm;
 
 void init_vars();
-void heartbeat_detection(float tension);
+void heartbeat_detection(float tension, void (*callback)(int));
 float calculate_bpm();
 void light();

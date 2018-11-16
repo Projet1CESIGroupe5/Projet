@@ -1,5 +1,12 @@
 #include "cardio.c"
 
+void callback(int bpm)
+{
+  Serial.print(millis());
+  Serial.print(";");
+  Serial.println(bpm);
+}
+
 void setup()
 {
   Serial.begin(9600);
@@ -17,7 +24,7 @@ void loop()
 
   float tension = val * (5.0/1023.0);
   
-  heartbeat_detection(tension);
+  heartbeat_detection(tension, callback);
 
-  Serial.println("test");
+  
 }

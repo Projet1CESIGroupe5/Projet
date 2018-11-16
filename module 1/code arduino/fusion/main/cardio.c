@@ -14,7 +14,7 @@ void init_vars()
 }
 
 
-void heartbeat_detection(float tension) 
+void heartbeat_detection(float tension, void (*callback)(int)) 
 {
   //float tension = 1.0;
     if(tension > 1 && up == 0)
@@ -42,6 +42,7 @@ void heartbeat_detection(float tension)
       }
       if(amount_bpm == 5)
       {
+        callback(total_bpm/amount_bpm);
         total_bpm = 0.0;
         amount_bpm = 0;
       }

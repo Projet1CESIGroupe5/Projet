@@ -1,7 +1,7 @@
 #include "cardio.h"
 #include <Arduino.h>
 
-void heartbeat(float tension) {
+void heartbeat_detection(float tension) {
   //float tension = 1.0;
     if(tension > 1 && montant == 0)
       {

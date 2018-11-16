@@ -6,4 +6,4 @@ bool montant;
 float bpms;
 int bts;
 
-void heartbeat(float tension);
+void heartbeat_detection(float tension);

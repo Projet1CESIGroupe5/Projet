@@ -1,268 +1,387 @@
+//libraries implementation
 #include <stdio.h>
 #include "generationCode.h"
 
-void Mode_1()
+//in each function, set the variables to parameter
+//type of function void because it doesn't return anything
+//start of an function
+void Mode_1(int choice)
 {
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
 
-    fprintf(fichier, "Mode_Toutes()\n"
-            "{\n for(int i = 2; i < 12; i++)\n"
-            " {\n digitalWrite(i, HIGH);\n }\n"
-            " delay(200); \n"
-            " for(int i = 2; i < 12; i++)\n"
-            " {\n digitalWrite(i, LOW);\n }\n"
-            " delay(200);\n }");
+    //write to the file
+    fprintf(file,
+        "#include <Arduino.h>\n"
+        "//start of the function\n"
+        "void function()\n {\n"
+        "//beginning of a loop for\n"
+        "//condition of the loop : initialize variable i to 2, must i less than 12 and i increments of 1 with each step\n "
+        " for(int i = 2; i < 12; i++)\n {\n"
+        "//sets a HIGH level to a numeric pin\n"
+        "//sets led i on\n"
+        " digitalWrite(i, HIGH);\n }\n"
+        "//end of a loop for\n"
+        "//waits 50 milliseconds\n"
+        " delay(50); \n"
+        "//new loop for with the same conditions as the previous loop\n"
+        " for(int i = 2; i < 12; i++)\n {\n"
+        "//sets the led i off\n"
+        " digitalWrite(i, LOW);\n }\n"
+        "//end of a loop for\n"
+        " }", choice);
 
-    fclose(fichier);
+    //closing the file
+    fclose(file);
 }
 
-void Mode_2()
+//start of an function
+void Mode_2(int choice)
 {
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
 
-        fprintf(fichier, "Mode_1_sur_2()\n"
-                "{\n for(int i = 2; i < 12; i+=2)\n"
-                " {\n digitalWrite(i, HIGH);\n "
-                " delay(200); \n"
-                " digitalWrite(i, LOW);\n "
-                " delay(200);\n }\n}");
-
-    fclose(fichier);
-}
-
-void Mode_3()
-{
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
-
-       fprintf(fichier, "Mode_1_sur_3()\n"
-                "{\n for(int i = 0; i < 12; i+=3)\n"
-                " {\n digitalWrite(i, HIGH);\n "
-                " delay(200);\n "
-                " digitalWrite(i, LOW);\n "
-                " delay(200);\n }\n}");
-
-    fclose(fichier);
-}
-
-void Mode_4()
-{
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
-
-    fprintf(fichier, "Mode_Echange()\n"
-            "{\n for(int i = 2; i < 12; i+=2)\n"
-            " {\n digitalWrite(i, HIGH);\n }\n "
-            " delay(200); \n"
-            " for(int i = 2; i < 12; i+=2)\n"
-            " {\n digitalWrite(i, LOW);\n }\n "
-            " delay(200); \n"
-            " for(int i = 3; i < 12; i+=2)\n"
-            " {\n digitalWrite(i, HIGH);\n }\n "
-            " delay(200);\n "
-            " for(int i = 3; i < 12; i+=2)\n"
-            " {\n digitalWrite(i, LOW);\n }\n "
-            " delay(200);\n}");
-
-    fclose(fichier);
-}
-
-void Mode_5()
-{
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
-
-    fprintf(fichier, "Mode_Chenille()\n"
-            "{\n for(int i = 11; i >=2; i--)\n"
-            " {\n digitalWrite(i, HIGH);\n "
-            " delay(200);\  "
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n "
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 2, must i less than 12 and i increments of 2 with each step\n "
+            "for(int i = 2; i < 12; i+=2)\n {\n"
+            "//sets led i on\n"
+            " digitalWrite(i, HIGH);\n "
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
+            "//sets led i off\n"
             " digitalWrite(i, LOW);\n "
-            " delay(200);\n }\n}");
+            "}\n}"
+            "//end of a loop for\n", choice);
 
-    fclose(fichier);
+    //closing the file
+    fclose(file);
 }
 
-void Mode_6()
+//start of an function
+void Mode_3(int choice)
 {
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
 
-    fprintf(fichier, "Mode_Chenille_Inverse()\n"
-            "{\n for(int i = 0; i < 12; i++)\n"
-            " {\n digitalWrite(i, HIGH);\n "
-            " delay(200);\n "
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//beginning of a loop for"
+            "//conditions of the loop : initialize variable i to 2, must i less than 12 and i increments of 3 with each step\n "
+            " for(int i = 0; i < 12; i+=3)\n {\n"
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n "
+            "//waits 50 milliseconds\n"
+            " delay(50);\n "
+            "//sets the led i off\n"
+            " digitalWrite(i, LOW);\n"
+            "}\n}", choice);
+
+    //closing the file
+    fclose(file);
+}
+
+//start of an function
+void Mode_4(int choice)
+{
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
+
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 2, must i less than 12 and i increments of 2 with each step\n "
+            " for(int i = 2; i < 12; i+=2)\n {\n "
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n }\n "
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
+            "//new loop for with the same conditions as the previous loop\n"
+            " for(int i = 2; i < 12; i+=2)\n {\n "
+            "//sets the led i off\n"
+            " digitalWrite(i, LOW);\n }\n "
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 3, must i less than 12 and i increments of 2 with each step\n "
+            " for(int i = 3; i < 12; i+=2)\n {\n"
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n }\n "
+            "//waits 50 milliseconds\n"
+            " delay(50);\n "
+            "//new loop for with the same conditions as the previous loop\n"
+            " for(int i = 3; i < 12; i+=2)\n {\n"
+            "//sets the led i off\n"
+            " digitalWrite(i, LOW);\n }\n "
+            "//waits 50 milliseconds\n"
+            " delay(50);\n}", choice);
+
+    //closing the file
+    fclose(file);
+}
+
+//start of an function
+void Mode_5(int choice)
+{
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
+
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 11, must i higher or equal to 12 and i increments of -1 with each step\n "
+            " for(int i = 11; i >=2; i--)\n {\n"
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n "
+            "//waits 30 milliseconds\n"
+            " delay(30);\n  "
+            "//sets the led i off\n"
             " digitalWrite(i, LOW);\n "
-            " delay(200);\n }\n }");
+            "}\n}", choice);
 
-    fclose(fichier);
+    //closing the file
+    fclose(file);
 }
 
-void Mode_7()
+//start of an function
+void Mode_6(int choice)
 {
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
 
-    fprintf(fichier, "Mode_Chenille_Bis()\n"
-            "{\n for(int i = 0; i < 12; i++)\n"
-            " {\n digitalWrite(LEDS[i], LOW);\n "
-            " delay(200);\n "
-            " digitalWrite(LEDS[i], HIGH);\n "
-            " delay(200);\n }\n}");
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 0, must i less than 12 and i increments of 1 with each step\n "
+            " for(int i = 0; i < 12; i++)\n {\n"
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n "
+            "//waits 30 milliseconds\n"
+            " delay(30);\n "
+            "//sets the led i off\n"
+            " digitalWrite(i, LOW);\n "
+            "}\n }", choice);
 
-    fclose(fichier);
+    //closing the file
+    fclose(file);
 }
 
-void Mode_8()
+//start of an function
+void Mode_7(int choice)
 {
-    FILE* fichier = NULL;
-    fichier = fopen("coeur.c/param.h", "w");
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
 
-    fprintf(fichier, "Mode_Guirlande()\n"
-            "{\n digitalWrite(3, HIGH);\n "
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//beginning of a loop for"
+            "//condition of the loop : initialize variable i to 0, must i less than 12 and i increments of 1 with each step\n "
+            " for(int i = 0; i < 12; i++)\n {\n"
+            "//waits 40 milliseconds\n"
+            "delay(40);\n"
+            "//sets the led i on\n"
+            " digitalWrite(i, HIGH);\n "
+            "} \n }", choice);
+
+    //closing the file
+    fclose(file);
+}
+
+//start of an function
+void Mode_8(int choice)
+{
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
+
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//declaration and initialisation of a constant TEMPS to 60\n"
+            "const int TEMPS = 60;\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//sets the led 3 on\n"
+            " digitalWrite(3, HIGH);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 2 on\n"
             " digitalWrite(2, HIGH);\n "
+            "//sets the led 4 on\n"
             " digitalWrite(4, HIGH);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS);\n "
+            "//sets the led 5 on\n"
             " digitalWrite(5, HIGH);\n "
+            "//sets the led 11 on\n"
             " digitalWrite(11, HIGH); \n"
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS);\n "
+            "//sets the led 6 on\n"
             " digitalWrite(6, HIGH);\n "
+            "//sets the led 10 on\n"
             " digitalWrite(10, HIGH);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS);\n "
+            "//sets the led 7 on\n"
             " digitalWrite(7, HIGH); \n"
+            "//sets the led 9 on\n"
             " digitalWrite(9, HIGH);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 8 on\n"
             " digitalWrite(8, HIGH);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS);\n "
+            "//sets the led 3 off\n"
             " digitalWrite(3, LOW); \n"
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 2 off\n"
             " digitalWrite(2, LOW);\n "
+            "//sets the led 4 off\n"
             " digitalWrite(4, LOW);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); "
+            "//sets the led 5 off\n"
             " digitalWrite(5, LOW);\n "
+            "//sets the led 11 off\n"
             " digitalWrite(11, LOW); \n"
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 6 off\n"
             " digitalWrite(6, LOW); \n"
+            "//sets the led 10 off\n"
             " digitalWrite(10, LOW);\n "
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 7 off\n"
             " digitalWrite(7, LOW); \n"
+            "//sets the led 9 off\n"
             " digitalWrite(9, LOW); \n"
+            "//waits TEMPS milliseconds\n"
             " delay(TEMPS); \n"
+            "//sets the led 8 off\n"
             " digitalWrite(8, LOW); \n"
-            " delay(TEMPS);\n}");
+            "}", choice);
 
-    fclose(fichier);
+    //closing the file
+    fclose(file);
 }
+
+//start of an function
+void Mode_9(int choice, int led)
+{
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
+
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            "void function()\n {\n"
+            "//declaration and initialization an integer led variable\n"
+            "//sets the led on\n"
+            " digitalWrite(%d, HIGH);\n"
+            "//waits 50 milliseconds\n"
+            " delay(50);\n"
+            "//sets the led  off\n"
+            " digitalWrite(%d, LOW);\n"
+            "}", led, led);
+
+    //closing the file
+    fclose(file);
+}
+
+//start of an function
+void Mode_10(int choice, int led)
+{
+    //declaring the FILE* pointer for each useful file
+    //pointer initialized to NULL
+    FILE* file = NULL;
+    //open file coeur.c/param.h en mode w (écriture seule)
+    //the file pointer becomes a pointer on coeur.c/param.h
+    file = fopen("coeur.c/param.h", "w");
+
+    //write to the file
+    fprintf(file,
+            "#include <Arduino.h>\n"
+            "//start of the function\n"
+            " void function()\n {\n "
+            "//sets the led on\n"
+            " digitalWrite(random(2, 12), HIGH);\n"
+            "//waits 50 milliseconds\n"
+            " delay(50);\n"
+            "//sets the led  off\n"
+            " digitalWrite(led, LOW);\n"
+            "//waits 200 milliseconds\n"
+            " delay(200);\n }", choice, led);
+
+    //closing the file
+    fclose(file);
+}
+
+
 /*void mode_de_leds(int choix)
 {
     FILE* fichier = NULL;
     fichier = fopen("param.h", "w");
 
     fprintf(fichier, "const int CONFIG = %i", choix);
-
-    switch(choix)
-    {
-    case 1 :
-        fprintf("for(int i = 2; i < 12; i++)"
-            " { digitalWrite(i, HIGH); }"
-            " delay(200); "
-            " for(int i = 2; i < 12; i++) "
-            " { digitalWrite(i, LOW); }"
-            " delay(200);", fichier);
-    break;
-
-    case 2 :
-        fprintf(" for(int i = 2; i < 12; i+=2)"
-            " { digitalWrite(i, HIGH); "
-            " delay(200); "
-            " digitalWrite(i, LOW); "
-            " delay(200); }", choix, fichier);
-    break;
-
-    case 3 :
-        fprintf(" for(int i = 0; i < 12; i+=3)"
-            " { digitalWrite(i, HIGH); "
-            " delay(200); "
-            " digitalWrite(i, LOW); "
-            " delay(200); }", choix, fichier);
-    break;
-
-    case 4 :
-        fprintf(" for(int i = 2; i < 12; i+=2)"
-            " { digitalWrite(i, HIGH); } "
-            " delay(200); "
-            " for(int i = 2; i < 12; i+=2)"
-            " { digitalWrite(i, LOW); } "
-            " delay(200); "
-            " for(int i = 3; i < 12; i+=2)"
-            " { digitalWrite(i, HIGH); } "
-            " delay(200); "
-            " for(int i = 3; i < 12; i+=2)"
-            " { digitalWrite(i, LOW); } "
-            " delay(200);", choix, fichier);
-    break;
-
-    case 5 :
-        fprintf("for(int i = 11; i >=2; i--)"
-            " { digitalWrite(i, HIGH); "
-            " delay(200); "
-            " digitalWrite(i, LOW); "
-            " delay(200); }", choix, fichier);
-    break;
-
-    case 6 :
-        fprintf(" for(int i = 0; i < 12; i++)"
-            " { digitalWrite(i, HIGH); "
-            " delay(200); "
-            " digitalWrite(i, LOW); "
-            " delay(200); }", choix, fichier);
-    break;
-
-    case 7 :
-        fprintf(" for(int i = 0; i < 12; i++)"
-            " { digitalWrite(LEDS[i], LOW); "
-            " delay(200); "
-            " digitalWrite(LEDS[i], HIGH); "
-            " delay(200); }", choix, fichier);
-    break;
-
-    case 8 :
-        fprintf(" digitalWrite(3, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(2, HIGH); "
-            " digitalWrite(4, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(5, HIGH); "
-            " digitalWrite(11, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(6, HIGH); "
-            " digitalWrite(10, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(7, HIGH); "
-            " digitalWrite(9, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(8, HIGH); "
-            " delay(TEMPS); "
-            " digitalWrite(3, LOW); "
-            " delay(TEMPS); "
-            " digitalWrite(2, LOW); "
-            " digitalWrite(4, LOW); "
-            " delay(TEMPS); "
-            " digitalWrite(5, LOW); "
-            " digitalWrite(11, LOW); "
-            " delay(TEMPS); "
-            " digitalWrite(6, LOW); "
-            " digitalWrite(10, LOW); "
-            " delay(TEMPS); "
-            " digitalWrite(7, LOW); "
-            " digitalWrite(9, LOW); "
-            " delay(TEMPS); "
-            " digitalWrite(8, LOW); "
-            " delay(TEMPS);", choix, fichier);
-    break;
-    }
 
     fclose(fichier);
 }*/

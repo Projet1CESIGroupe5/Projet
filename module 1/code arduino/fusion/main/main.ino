@@ -7,14 +7,17 @@ void setup()
   {
     pinMode(i, OUTPUT);
   }
-  init();
+  init_vars();
 }
 
 void loop()
 {
+  
   int val = analogRead(0);
 
   float tension = val * (5.0/1023.0);
   
   heartbeat_detection(tension);
+
+  Serial.println("test");
 }

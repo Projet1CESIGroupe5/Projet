@@ -15,8 +15,8 @@ void Mode_1(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-        "int MODE = %d;\n"
+    fprintf(file,
+        "#include <Arduino.h>\n"
         "//start of the function\n"
         "void function()\n {\n"
         "//beginning of a loop for\n"
@@ -26,15 +26,14 @@ void Mode_1(int choice)
         "//sets led i on\n"
         " digitalWrite(i, HIGH);\n }\n"
         "//end of a loop for\n"
-        "//waits 200 milliseconds\n"
-        " delay(200); \n"
+        "//waits 50 milliseconds\n"
+        " delay(50); \n"
         "//new loop for with the same conditions as the previous loop\n"
         " for(int i = 2; i < 12; i++)\n {\n"
         "//sets the led i off\n"
         " digitalWrite(i, LOW);\n }\n"
         "//end of a loop for\n"
-        "//waits 200 milliseconds\n"
-        " delay(200);\n }", choice);
+        " }", choice);
 
     //closing the file
     fclose(file);
@@ -51,8 +50,8 @@ void Mode_2(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file,"//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n "
             "//beginning of a loop for"
@@ -60,12 +59,11 @@ void Mode_2(int choice)
             "for(int i = 2; i < 12; i+=2)\n {\n"
             "//sets led i on\n"
             " digitalWrite(i, HIGH);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200); \n"
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
             "//sets led i off\n"
             " digitalWrite(i, LOW);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n }\n}"
+            "}\n}"
             "//end of a loop for\n", choice);
 
     //closing the file
@@ -83,8 +81,8 @@ void Mode_3(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//beginning of a loop for"
@@ -92,12 +90,11 @@ void Mode_3(int choice)
             " for(int i = 0; i < 12; i+=3)\n {\n"
             "//sets the led i on\n"
             " digitalWrite(i, HIGH);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n "
+            "//waits 50 milliseconds\n"
+            " delay(50);\n "
             "//sets the led i off\n"
             " digitalWrite(i, LOW);\n"
-            "//waits 200 milliseconds\n"
-            " delay(200);\n }\n}", choice);
+            "}\n}", choice);
 
     //closing the file
     fclose(file);
@@ -114,8 +111,8 @@ void Mode_4(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//beginning of a loop for"
@@ -123,27 +120,27 @@ void Mode_4(int choice)
             " for(int i = 2; i < 12; i+=2)\n {\n "
             "//sets the led i on\n"
             " digitalWrite(i, HIGH);\n }\n "
-            "//waits 200 milliseconds\n"
-            " delay(200); \n"
-            "new loop for with the same conditions as the previous loop\n"
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
+            "//new loop for with the same conditions as the previous loop\n"
             " for(int i = 2; i < 12; i+=2)\n {\n "
             "//sets the led i off\n"
             " digitalWrite(i, LOW);\n }\n "
-            "//waits 200 milliseconds\n"
-            " delay(200); \n"
+            "//waits 50 milliseconds\n"
+            " delay(50); \n"
             "//beginning of a loop for"
             "//condition of the loop : initialize variable i to 3, must i less than 12 and i increments of 2 with each step\n "
             " for(int i = 3; i < 12; i+=2)\n {\n"
             "//sets the led i on\n"
             " digitalWrite(i, HIGH);\n }\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n "
+            "//waits 50 milliseconds\n"
+            " delay(50);\n "
             "//new loop for with the same conditions as the previous loop\n"
             " for(int i = 3; i < 12; i+=2)\n {\n"
             "//sets the led i off\n"
             " digitalWrite(i, LOW);\n }\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n}", choice);
+            "//waits 50 milliseconds\n"
+            " delay(50);\n}", choice);
 
     //closing the file
     fclose(file);
@@ -160,8 +157,8 @@ void Mode_5(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//beginning of a loop for"
@@ -169,12 +166,11 @@ void Mode_5(int choice)
             " for(int i = 11; i >=2; i--)\n {\n"
             "//sets the led i on\n"
             " digitalWrite(i, HIGH);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n  "
+            "//waits 30 milliseconds\n"
+            " delay(30);\n  "
             "//sets the led i off\n"
             " digitalWrite(i, LOW);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n }\n}", choice);
+            "}\n}", choice);
 
     //closing the file
     fclose(file);
@@ -191,8 +187,8 @@ void Mode_6(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//beginning of a loop for"
@@ -200,12 +196,11 @@ void Mode_6(int choice)
             " for(int i = 0; i < 12; i++)\n {\n"
             "//sets the led i on\n"
             " digitalWrite(i, HIGH);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n "
+            "//waits 30 milliseconds\n"
+            " delay(30);\n "
             "//sets the led i off\n"
             " digitalWrite(i, LOW);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n }\n }", choice);
+            "}\n }", choice);
 
     //closing the file
     fclose(file);
@@ -222,21 +217,18 @@ void Mode_7(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//beginning of a loop for"
             "//condition of the loop : initialize variable i to 0, must i less than 12 and i increments of 1 with each step\n "
             " for(int i = 0; i < 12; i++)\n {\n"
-            "//sets the led i off\n"
-            " digitalWrite(LEDS[i], LOW);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n "
+            "//waits 40 milliseconds\n"
+            "delay(40);\n"
             "//sets the led i on\n"
-            " digitalWrite(LEDS[i], HIGH);\n "
-            "//waits 200 milliseconds\n"
-            " delay(200);\n }\n}", choice);
+            " digitalWrite(i, HIGH);\n "
+            "} \n }", choice);
 
     //closing the file
     fclose(file);
@@ -253,8 +245,8 @@ void Mode_8(int choice)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d;\n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//declaration and initialisation of a constant TEMPS to 60\n"
             "const int TEMPS = 60;\n"
             "//start of the function\n"
@@ -321,8 +313,7 @@ void Mode_8(int choice)
             " delay(TEMPS); \n"
             "//sets the led 8 off\n"
             " digitalWrite(8, LOW); \n"
-            "//waits TEMPS milliseconds\n"
-            " delay(TEMPS);\n}", choice);
+            "}", choice);
 
     //closing the file
     fclose(file);
@@ -339,22 +330,18 @@ void Mode_9(int choice, int led)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            "int MODE = %d; \n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             "void function()\n {\n"
             "//declaration and initialization an integer led variable\n"
-            " int led = %d;\n"
             "//sets the led on\n"
-            " digitalWrite(led, HIGH);\n"
-            "//waits 200 milliseconds\n"
-            " delay(200);\n"
+            " digitalWrite(%d, HIGH);\n"
+            "//waits 50 milliseconds\n"
+            " delay(50);\n"
             "//sets the led  off\n"
-            " digitalWrite(led, LOW);\n"
-            "//waits 200 milliseconds\n"
-            " delay(200);\n"
-            "//sets the led on\n"
-            " digitalWrite(led, HIGH);\n}", choice, led);
+            " digitalWrite(%d, LOW);\n"
+            "}", led, led);
 
     //closing the file
     fclose(file);
@@ -371,16 +358,14 @@ void Mode_10(int choice, int led)
     file = fopen("coeur.c/param.h", "w");
 
     //write to the file
-    fprintf(file, "//declaration of an integer MODE variable\n"
-            " int MODE = %d; \n"
+    fprintf(file,
+            "#include <Arduino.h>\n"
             "//start of the function\n"
             " void function()\n {\n "
-            "declaration and initialization an integer variable led to random\n"
-            " int led = random(2, 12);\n"
             "//sets the led on\n"
-            " digitalWrite(led, HIGH);\n"
-            "//waits 200 milliseconds\n"
-            " delay(200);\n"
+            " digitalWrite(random(2, 12), HIGH);\n"
+            "//waits 50 milliseconds\n"
+            " delay(50);\n"
             "//sets the led  off\n"
             " digitalWrite(led, LOW);\n"
             "//waits 200 milliseconds\n"

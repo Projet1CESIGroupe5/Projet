@@ -2,8 +2,6 @@
 #include <Arduino.h>
 #include <stdio.h>
 
-extern int main_bpm;
-
 void init_vars()
 {
   lastBPM = 0;

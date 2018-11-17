@@ -12,9 +12,8 @@ void init_vars()
 }
 
 
-void heartbeat_detection(float tension, void (*callback)(int)) 
+void heartbeat_detection(float tension, void (*callback)(int))
 {
-  //float tension = 1.0;
     if(tension > 1 && up == 0)
       {
         if(lastTime == 0)
@@ -51,17 +50,4 @@ float calculate_bpm()
   long DiffTemps = millis()-lastTime;
   float bpm = 60.0*(DiffTemps/1000.0)*2.0;
   return bpm; 
-}
-
-void light()
-{
-  for(int i = 2; i < 12; i++)
-  {
-   digitalWrite(i, HIGH); 
-  }
-  delay(200);
-  for(int i = 2; i < 12; i++)
-  {
-   digitalWrite(i, LOW); 
-  }
 }

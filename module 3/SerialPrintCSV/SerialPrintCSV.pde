@@ -6,7 +6,7 @@ PrintWriter output;
 Serial udSerial;
 
 void setup() {
-  udSerial = new Serial(this, Serial.list()[0], 9600);
+  udSerial = new Serial(this, "COM6", 9600);
   output = createWriter ("Battements.csv");
 }
 

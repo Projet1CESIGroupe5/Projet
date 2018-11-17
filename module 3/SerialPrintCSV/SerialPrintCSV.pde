@@ -13,7 +13,7 @@ void setup() {
   void draw() {
     if (udSerial.available() > 0) {
       String SenVal = udSerial.readString();
-      if (SenVal != null) {
+      if (SenVal != null && SenVal.contains(";")) {
         output.println(SenVal);
       }
     }

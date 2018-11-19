@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1542647383 source:c:\users\utilisateur\desktop\module 2\generationcode.c
+	<stdio.h>
+	"generationCode.h"
+
+1542647383 c:\users\utilisateur\desktop\module 2\generationcode.h
+
+1542647383 source:c:\users\utilisateur\desktop\module 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"generationCode.h"
+
+1542647383 c:\users\utilisateur\desktop\module 2\menu.h
+	"generationCode.h"
+
+1542647383 source:c:\users\utilisateur\desktop\module2\generationcode.c
+	<stdio.h>
+	"generationCode.h"
+
+1542647383 c:\users\utilisateur\desktop\module2\generationcode.h
+
+1542647383 source:c:\users\utilisateur\desktop\module2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"generationCode.h"
+
+1542647383 c:\users\utilisateur\desktop\module2\menu.h
+	"generationCode.h"
+
+1542647513 source:c:\users\utilisateur\desktop\module2\menu.c
+	"menu.h"
+	<stdio.h>
+

@@ -1,5 +1,6 @@
 //libraries implementation
 #include "menuLed.h"
+#include "generationCode.h"
 #include <stdio.h>
 
 //call and start of the function
@@ -52,76 +53,6 @@ void display_menu()
 
     //start of the switch instruction
     //choice is the expression successively tested in case
-    switch(choice)
-    {
-    //value test 1
-    case 1 :
-        //call of the Mode_1 function of the generationCode.c
-        Mode_1(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 2
-    case 2 :
-        //call of the Mode_2 function of the generationCode.c
-        Mode_2(choice);
-    break;
-
-    //value test 3
-    case 3 :
-        //call of the Mode_3 function of the generationCode.c
-        Mode_3(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 4
-    case 4 :
-        //call of the Mode_4 function of the generationCode.c
-        Mode_4(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 5
-    case 5 :
-        //call of the Mode_5 function of the generationCode.c
-        Mode_5(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 6
-    case 6 :
-        //call of the Mode_6 function of the generationCode.c
-        Mode_6(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 7
-    case 7 :
-        //call of the Mode_7 function of the generationCode.c
-        Mode_7(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 8
-    case 8 :
-        //call of the Mode_8 function of the generationCode.c
-        Mode_8(choice);
-    //exit from the conditional structure
-    break;
-
-    //value test 9
-    case 9 :
-        //call of the Mode_9 function of the generationCode.c
-        Mode_9(choice, led);
-    //exit from the conditional structure
-    break;
-
-    //value test 10
-    case 10 :
-        //call of the Mode_10 function of the generationCode.c
-        Mode_10(choice, led);
-    //exit from the conditional structure
-    break;
-    }
+    mode_de_leds(choice);
 }
 //end of the function

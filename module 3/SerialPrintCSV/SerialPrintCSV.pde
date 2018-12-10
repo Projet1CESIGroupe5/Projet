@@ -4,6 +4,7 @@ import processing.serial.*;
 //declare
 PrintWriter output;
 Serial udSerial;
+boolean started = false;
 
 void setup() {
   udSerial = new Serial(this, "COM6", 9600);
@@ -11,16 +12,21 @@ void setup() {
 }
 
   void draw() {
-    if (udSerial.available() > 0) {
+    if (udSerial.available() > 0 && started) {
       String SenVal = udSerial.readString();
       if (SenVal != null && SenVal.contains(";")) {
-        output.println(SenVal);
+        output.print(SenVal);
       }
     }
   }
 
   void keyPressed(){
-    output.flush();
+    if(!started) {
+      started = true;
+    }
+    else {
+     output.flush();
     output.close();
-    exit(); 
+    exit();  
+    }
   }
